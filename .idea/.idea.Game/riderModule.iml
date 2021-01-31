@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="RIDER_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$/../../../../../AppData/local/Unity/cache/packages/packages.unity.com/com.unity.2d.animation@4.2.6" />
+    <content url="file://$MODULE_DIR$/../../../../../AppData/local/Unity/cache/packages/packages.unity.com/com.unity.2d.path@3.0.2" />
+    <content url="file://$MODULE_DIR$/../../../../../AppData/local/Unity/cache/packages/packages.unity.com/com.unity.2d.psdimporter@3.1.6" />
+    <content url="file://$MODULE_DIR$/../../../../../AppData/local/Unity/cache/packages/packages.unity.com/com.unity.2d.spriteshape@4.1.4" />
+    <content url="file://$MODULE_DIR$/../../../../../AppData/local/Unity/cache/packages/packages.unity.com/com.unity.cinemachine@2.6.3" />
+    <content url="file://$MODULE_DIR$/../../../../../AppData/local/Unity/cache/packages/packages.unity.com/com.unity.render-pipelines.core@8.2.0" />
+    <content url="file://$MODULE_DIR$/../../../../../AppData/local/Unity/cache/packages/packages.unity.com/com.unity.render-pipelines.universal@8.2.0" />
+    <content url="file://$MODULE_DIR$/../../../../../AppData/local/Unity/cache/packages/packages.unity.com/com.unity.searcher@4.0.9" />
+    <content url="file://$MODULE_DIR$/../../../../../AppData/local/Unity/cache/packages/packages.unity.com/com.unity.shadergraph@8.2.0" />
+    <content url="file://$MODULE_DIR$/../.." />
+    <content url="file://$MODULE_DIR$/../../../../Library/Unity/cache/packages/packages.unity.com/com.unity.2d.animation@4.2.6" />
+    <content url="file://$MODULE_DIR$/../../../../Library/Unity/cache/packages/packages.unity.com/com.unity.2d.psdimporter@3.1.6" />
+    <content url="file://$MODULE_DIR$/../../../../Library/Unity/cache/packages/packages.unity.com/com.unity.2d.spriteshape@4.1.4" />
+    <content url="file://$MODULE_DIR$/../../../../Library/Unity/cache/packages/packages.unity.com/com.unity.cinemachine@2.6.3" />
+    <content url="file://$MODULE_DIR$/../../../../Library/Unity/cache/packages/packages.unity.com/com.unity.render-pipelines.core@8.2.0" />
+    <content url="file://$MODULE_DIR$/../../../../Library/Unity/cache/packages/packages.unity.com/com.unity.render-pipelines.universal@8.2.0" />
+    <content url="file://$MODULE_DIR$/../../../../Library/Unity/cache/packages/packages.unity.com/com.unity.searcher@4.0.9" />
+    <content url="file://$MODULE_DIR$/../../../../Library/Unity/cache/packages/packages.unity.com/com.unity.shadergraph@8.2.0" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

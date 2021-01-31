@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c2d87be5-6fd0-46b7-8a02-1d2782978b9e" name="Default Changelist" comment="ghvhhg" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Shop/Coin.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Battle/Projectile.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Assets/Scripts/my/Inventorymist.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Shop/CoinScript.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Shop/StoreManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Shop/Coin.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Shop/ScoreManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Shop/Shopsystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Battle/Weapon.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Battle/Projectile.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Battle/Enemy.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1nA08pInGF4ufzeoKmMLtEy1YUO" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Discover.Launch.Via.Unity" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="selectedOptions">
+        <set />
+      </option>
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="selectedOptions">
+        <set />
+      </option>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c2d87be5-6fd0-46b7-8a02-1d2782978b9e" name="Default Changelist" comment="" />
+      <created>1610817441299</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1610817441299</updated>
+      <workItem from="1610817472145" duration="349000" />
+      <workItem from="1611040623378" duration="314000" />
+      <workItem from="1611044823866" duration="909000" />
+      <workItem from="1611051737300" duration="2704000" />
+      <workItem from="1611126577222" duration="1004000" />
+      <workItem from="1611128604814" duration="998000" />
+      <workItem from="1611130459928" duration="568000" />
+      <workItem from="1611171174097" duration="271000" />
+      <workItem from="1611176577936" duration="461000" />
+      <workItem from="1611227674122" duration="94000" />
+      <workItem from="1611252908366" duration="1690000" />
+      <workItem from="1611254763051" duration="1072000" />
+      <workItem from="1611256901842" duration="1709000" />
+      <workItem from="1611259194784" duration="254000" />
+      <workItem from="1611266255344" duration="234000" />
+      <workItem from="1611268512533" duration="229000" />
+      <workItem from="1611270645924" duration="1134000" />
+      <workItem from="1611272552852" duration="1447000" />
+      <workItem from="1611274414246" duration="1409000" />
+      <workItem from="1611276271640" duration="250000" />
+      <workItem from="1611276822833" duration="1442000" />
+      <workItem from="1611278982661" duration="508000" />
+    </task>
+    <task id="LOCAL-00001" summary="самое быстрое изменение">
+      <created>1610817630626</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1610817630626</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Все работет">
+      <created>1611131080276</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1611131080277</updated>
+    </task>
+    <task id="LOCAL-00003" summary="все есть">
+      <created>1611171211696</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1611171211697</updated>
+    </task>
+    <task id="LOCAL-00004" summary="ggh">
+      <created>1611259337235</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1611259337235</updated>
+    </task>
+    <task id="LOCAL-00005" summary="ghvhhg">
+      <created>1611280015431</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1611280015433</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="самое быстрое изменение" />
+    <MESSAGE value="Все работет" />
+    <MESSAGE value="все есть" />
+    <MESSAGE value="ggh" />
+    <MESSAGE value="ghvhhg" />
+    <option name="LAST_COMMIT_MESSAGE" value="ghvhhg" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="240" y="147" key="Vcs.Push.Dialog.v2" timestamp="1611280027351">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state x="240" y="147" key="Vcs.Push.Dialog.v2/0.23.1280.777@0.23.1280.777" timestamp="1611280027351" />
+    <state x="436" y="328" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1611268514523">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state x="436" y="328" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1280.777@0.23.1280.777" timestamp="1611268514523" />
+  </component>
+</project>
