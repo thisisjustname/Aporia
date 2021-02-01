@@ -5,12 +5,13 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public static Player instance;
+    
     public int maxHealth = 100;
     public static bool wasInShop = false;
     public static int currentMoney;
     public GameObject god;
     public static bool wasInLords = false;
-    public GameObject point;
     public static int currentHealth = 100;
     
     public static bool appearInPoint = false;
@@ -25,7 +26,15 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
+        instance = this;
+
+        if (appearInPoint)
+        {
+            SaveLoadManager.Instance.LoadGame();
+            Player.instance.transform.position = SaveLoadManager.Instance.saveData.spawnPosition;
+        }
         Debug.Log(SceneSwitchManager.Instance.name);
+        Debug.Log(SaveLoadManager.Instance.name);
     }
 
     private void Update()

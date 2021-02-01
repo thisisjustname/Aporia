@@ -1,9 +1,12 @@
 ﻿using System;
 using UnityEngine;
 using System.Collections;
+using Aporia;
 
-public class MouseClick : MonoBehaviour
+public class Destination : Singlton<Destination>
 {
+    public static Destination instance;
+
     private GameObject dialog;
     private GameObject player;
     
@@ -13,11 +16,18 @@ public class MouseClick : MonoBehaviour
 
     private void Awake()
     {
+        instance = this;
+        
         dialog = GameObject.Find("DialogueBox");
         player = GameObject.FindGameObjectWithTag("Player");
         // transform.position = player.transform.position;
     }
 
+    public void Start()
+    {
+        Destination.instance.transform.position = Player.instance.transform.position;
+    }
+    
     void Update ()
     {    
         if (Input.GetMouseButtonDown(0))

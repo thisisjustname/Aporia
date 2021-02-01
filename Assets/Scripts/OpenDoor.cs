@@ -10,7 +10,7 @@ public class OpenDoor : MonoBehaviour
     public Player player;
     public GameObject pointOfApp;
     public float width;
-    public int SaveOrLoad;
+    public bool saveData;
     public float height;
 
     public LayerMask whatIsPlayer;
@@ -24,17 +24,17 @@ public class OpenDoor : MonoBehaviour
         sceneSwitch = FindObjectOfType<SceneSwitchManager>();
     }
 
-    private void OnMouseDown()
-    {
-        playerDetected = Physics2D.OverlapBox(gameObject.transform.position, new Vector2(width, height), 0, whatIsPlayer);
-
-        if (playerDetected == true)
-        {
-            Player.appearInPoint = true;
-            sceneSwitch.SwitchScene(sceneName);
-        }
-        Debug.Log("Hey");
-    }
+    // private void OnMouseDown()
+    // {
+    //     playerDetected = Physics2D.OverlapBox(gameObject.transform.position, new Vector2(width, height), 0, whatIsPlayer);
+    //
+    //     if (playerDetected == true)
+    //     {
+    //         Player.appearInPoint = true;
+    //         sceneSwitch.SwitchScene(sceneName);
+    //     }
+    //     Debug.Log("Hey");
+    // }
 
     private void Update()
     {
@@ -44,14 +44,19 @@ public class OpenDoor : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                // if (SaveOrLoad == 0)
-                //     player.SavePlayer();
-                // else if (SaveOrLoad == 1)
-                //     player.LoadPlayer();
-                // else 
-                //     player.LoadPlayerWithTransform();
-
-                Player.appearInPoint = true;
+                if (saveData)
+                {
+                    Debug.Log(SaveLoadManager.Instance.saveData.spawnPosition.x);
+                    SaveLoadManager.Instance.saveData.spawnPosition = Player.instance.transform.position;
+                    SaveLoadManager.Instance.SaveGame();
+                    Player.appearInPoint = false;
+                }
+                else
+                {
+                    Player.appearInPoint = true;
+                }
+                
+                Debug.Log("Saved");
                 sceneSwitch.SwitchScene(sceneName);
             }
         }

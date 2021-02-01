@@ -20,7 +20,7 @@ namespace Aporia
                         _instance = FindObjectOfType<T>();
                         if (_instance == null)
                         {
-                            var singleton = new GameObject("[SINGLTON]" + typeof(T));
+                            var singleton = new GameObject("" + typeof(T));
                             _instance = singleton.AddComponent<T>();
                             DontDestroyOnLoad(singleton);
                         }
