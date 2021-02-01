@@ -8,7 +8,7 @@ public class OpenDoor : MonoBehaviour
 {
     private bool playerDetected;
     public Player player;
-    public GameObject pointOfApp;
+    public GameObject pressE;
     public float width;
     public bool saveData;
     public float height;
@@ -42,11 +42,12 @@ public class OpenDoor : MonoBehaviour
         // Debug.Log(playerDetected);
         if (playerDetected == true)
         {
+            pressE.SetActive(true);
             if (Input.GetKeyDown(KeyCode.E))
             {
                 if (saveData)
                 {
-                    Debug.Log(SaveLoadManager.Instance.saveData.spawnPosition.x);
+                    Debug.Log(SaveLoadManager.Instance.saveData.spawnPosition.x);   
                     SaveLoadManager.Instance.saveData.spawnPosition = Player.instance.transform.position;
                     SaveLoadManager.Instance.SaveGame();
                     Player.appearInPoint = false;
@@ -59,6 +60,10 @@ public class OpenDoor : MonoBehaviour
                 Debug.Log("Saved");
                 sceneSwitch.SwitchScene(sceneName);
             }
+        }
+        else
+        {
+            pressE.SetActive(false);
         }
     }
 
