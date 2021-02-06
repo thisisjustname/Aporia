@@ -30,11 +30,11 @@ public class Player : MonoBehaviour
 
         if (appearInPoint)
         {
-            SaveLoadManager.Instance.LoadGame();
-            Player.instance.transform.position = SaveLoadManager.Instance.saveData.spawnPosition;
+            PositionSaveLoadManager.Instance.LoadGame();
+            Player.instance.transform.position = PositionSaveLoadManager.Instance.savePositionData.spawnPosition;
         }
         Debug.Log(SceneSwitchManager.Instance.name);
-        Debug.Log(SaveLoadManager.Instance.name);
+        Debug.Log(PositionSaveLoadManager.Instance.name);
     }
 
     private void Update()

@@ -47,9 +47,9 @@ public class OpenDoor : MonoBehaviour
             {
                 if (saveData)
                 {
-                    Debug.Log(SaveLoadManager.Instance.saveData.spawnPosition.x);   
-                    SaveLoadManager.Instance.saveData.spawnPosition = Player.instance.transform.position;
-                    SaveLoadManager.Instance.SaveGame();
+                    Debug.Log(PositionSaveLoadManager.Instance.savePositionData.spawnPosition.x);   
+                    PositionSaveLoadManager.Instance.savePositionData.spawnPosition = Player.instance.transform.position;
+                    PositionSaveLoadManager.Instance.SaveGame();
                     Player.appearInPoint = false;
                 }
                 else

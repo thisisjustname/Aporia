@@ -3,7 +3,7 @@ using UnityEngine;
 using System.Collections;
 using Aporia;
 
-public class Destination : Singlton<Destination>
+public class Destination : Singleton<Destination>
 {
     public static Destination instance;
 

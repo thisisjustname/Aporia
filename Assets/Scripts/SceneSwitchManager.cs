@@ -4,7 +4,7 @@ using Aporia;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneSwitchManager : Singlton<SceneSwitchManager>
+public class SceneSwitchManager : Singleton<SceneSwitchManager>
 {
     public void Awake()
     {

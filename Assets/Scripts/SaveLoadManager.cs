@@ -6,7 +6,7 @@ using System.Xml;
 using System.Xml.Serialization;
 using Aporia;
 
-public class SaveLoadManager : Singlton<SaveLoadManager>
+public class SaveLoadManager : MonoBehaviour
 {
     public string name = "awef";
     public SaveData saveData;
