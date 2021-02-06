@@ -6,6 +6,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public static Player instance;
+    public InventoryObject inventory;
     
     public int maxHealth = 100;
     public static bool wasInShop = false;
@@ -65,5 +66,20 @@ public class Player : MonoBehaviour
     public void IncreaseValue(int value)
     {
         god.GetComponent<QuestGiver>().quest.goal.currentAmount += value;
+    }
+
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        var item = other.GetComponent<Item>();
+        if (item)
+        {
+            inventory.AddItem(item.item, 1);
+            Destroy(other.gameObject);
+        }
+    }
+
+    private void OnApplicationQuit()
+    {
+        inventory.Container.Clear();
     }
 }
