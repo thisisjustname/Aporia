@@ -20,7 +20,8 @@ public class DisplayInventory : MonoBehaviour
     {
         target = GameObject.Find("Target");
         airPath = Player.instance.GetComponent<AIPath>();
-        inventoryCanvas = GameObject.Find("Canvasinvent").GetComponent<Canvas>();
+        inventoryCanvas = GameObject.Find("Canvasinvent").GetComponent<Canvas>(); 
+        inventoryCanvas.enabled = false;
         
         maxSpeed = Player.instance.GetComponent<AIPath>().maxSpeed;
         CreateDisplay();
@@ -37,13 +38,13 @@ public class DisplayInventory : MonoBehaviour
                     airPath.maxSpeed = 0;
                     target.transform.position = gameObject.transform.position;
                     target.SetActive(false);
-                    inventoryCanvas.GetComponent<Canvas>().enabled = true;
+                    inventoryCanvas.enabled = true;
 
                 }
                 else
                 {
                     airPath.maxSpeed = maxSpeed;
-                    inventoryCanvas.GetComponent<Canvas>().enabled = false;
+                    inventoryCanvas.enabled = false;
                     target.SetActive(true);
                 }
             }
