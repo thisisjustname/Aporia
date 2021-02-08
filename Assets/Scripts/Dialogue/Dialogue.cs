@@ -1,14 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-[System.Serializable]
-public class Dialogue
+namespace Dialogue
 {
-    public int isChoise;
-    public string name;
+    [System.Serializable]
+    public class Dialogue
+    {
+        public int isChoise;
+        public string name;
     
-    [TextArea(3, 10)]
-    public string[] sentences;
+        [TextArea(3, 10)]
+        public string[] sentences;
     
+    }
 }

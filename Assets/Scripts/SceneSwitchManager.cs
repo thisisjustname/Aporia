@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Aporia;
+﻿using Aporia;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 

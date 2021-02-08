@@ -1,12 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Reward : MonoBehaviour
+namespace Shop
 {
-    public GameObject sign;
-    public void Update()
+    public class Reward : MonoBehaviour
     {
-        sign.SetActive(Player.wasInShop);
+        public GameObject sign;
+        public void Update()
+        {
+            sign.SetActive(Player.wasInShop);
+        }
     }
 }

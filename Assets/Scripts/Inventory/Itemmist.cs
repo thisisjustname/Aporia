@@ -1,77 +1,77 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Itemmist : MonoBehaviour
+namespace Inventory
 {
-    public string  type;
-    public int ID;
-    public int cost;
-    public string description;
-    public Sprite icon;
-    public bool pickedUp;
-    public int def;
-    [HideInInspector]
-    public bool equipped;
-    
-    public GameObject weapon;
-    
-    [HideInInspector]
-    public GameObject weaponManager;
-    
-    public bool playerWeapon;
-
-    public void Awake()
+    public class Itemmist : MonoBehaviour
     {
-        weaponManager = GameObject.FindWithTag("WeaponManager");
-        Debug.Log(gameObject.name + SceneManager.GetActiveScene().name);
-        if (!playerWeapon)
+        public string  type;
+        public int ID;
+        public int cost;
+        public string description;
+        public Sprite icon;
+        public bool pickedUp;
+        public int def;
+        [HideInInspector]
+        public bool equipped;
+    
+        public GameObject weapon;
+    
+        [HideInInspector]
+        public GameObject weaponManager;
+    
+        public bool playerWeapon;
+
+        public void Awake()
         {
-            int allWeapons = weaponManager.transform.childCount;
-            for (int  i=0; i < allWeapons; i++)
+            weaponManager = GameObject.FindWithTag("WeaponManager");
+            Debug.Log(gameObject.name + SceneManager.GetActiveScene().name);
+            if (!playerWeapon)
             {
-                if (weaponManager.transform.GetChild(i).gameObject.GetComponent<Itemmist>().ID == ID)
+                int allWeapons = weaponManager.transform.childCount;
+                for (int  i=0; i < allWeapons; i++)
                 {
-                    weapon = weaponManager.transform.GetChild(i).gameObject;
+                    if (weaponManager.transform.GetChild(i).gameObject.GetComponent<Itemmist>().ID == ID)
+                    {
+                        weapon = weaponManager.transform.GetChild(i).gameObject;
+                    }
                 }
             }
         }
-    }
 
-    public void Update()
-    {
-        weaponManager = GameObject.FindWithTag("WeaponManager");
-        if (!playerWeapon)
+        public void Update()
         {
-            int allWeapons = weaponManager.transform.childCount;
-            for (int  i=0; i < allWeapons; i++)
+            weaponManager = GameObject.FindWithTag("WeaponManager");
+            if (!playerWeapon)
             {
-                if (weaponManager.transform.GetChild(i).gameObject.GetComponent<Itemmist>().ID == ID)
+                int allWeapons = weaponManager.transform.childCount;
+                for (int  i=0; i < allWeapons; i++)
                 {
-                    weapon = weaponManager.transform.GetChild(i).gameObject;
+                    if (weaponManager.transform.GetChild(i).gameObject.GetComponent<Itemmist>().ID == ID)
+                    {
+                        weapon = weaponManager.transform.GetChild(i).gameObject;
+                    }
                 }
             }
-        }
         
-        if (equipped)
-        {
-            if (Input.GetKeyDown(KeyCode.G))
-                equipped = false;
-            if(equipped == false)
-                this.gameObject.SetActive(false);
+            if (equipped)
+            {
+                if (Input.GetKeyDown(KeyCode.G))
+                    equipped = false;
+                if(equipped == false)
+                    this.gameObject.SetActive(false);
+            }
         }
-    }
 
-    public void ItemUsage()
-    {
-         //wepon
-         if (type == "Weapon")
-         {
-             weapon.SetActive(true);
-             weapon.GetComponent<Itemmist>().equipped = true;
+        public void ItemUsage()
+        {
+            //wepon
+            if (type == "Weapon")
+            {
+                weapon.SetActive(true);
+                weapon.GetComponent<Itemmist>().equipped = true;
              
-         }
+            }
+        }
     }
 }

@@ -1,73 +1,72 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using Aporia;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class QuestGiver : MonoBehaviour
+namespace Questing
 {
-    public Quest quest;
-    public Player player;
-    public GameObject roots;
-    public GameObject amulet;
-    public GameObject questWindow;
-    public GameObject done;
-    private static bool questIdPicked = false;
-    public TextMeshProUGUI counter;
-    private bool windowIsActive;
-
-    public TextMeshProUGUI titel;
-    public TextMeshProUGUI description;
-
-    public void AcceptQuest()
+    public class QuestGiver : MonoBehaviour
     {
-        questIdPicked = true;
-        quest.isActive = true;
-        titel.text = quest.titel;
-        description.text = quest.description;
-        windowIsActive = true;
-        
-        Player.quest = quest;
-    }
+        public Quest quest;
+        public Player player;
+        public GameObject roots;
+        public GameObject amulet;
+        public GameObject questWindow;
+        public GameObject done;
+        private static bool questIdPicked = false;
+        public TextMeshProUGUI counter;
+        private bool windowIsActive;
 
-    public void Awake()
-    {
-        if (SceneManager.GetActiveScene().name == "start_of_forest")
+        public TextMeshProUGUI titel;
+        public TextMeshProUGUI description;
+
+        public void AcceptQuest()
         {
-            roots = GameObject.Find("Root");
-            amulet = GameObject.Find("Amulet");
+            questIdPicked = true;
+            quest.isActive = true;
+            titel.text = quest.titel;
+            description.text = quest.description;
+            windowIsActive = true;
+        
+            Player.quest = quest;
         }
-    }
 
-    private void Update()
-    {
-        if (quest.goal.IsReached())
+        public void Awake()
         {
             if (SceneManager.GetActiveScene().name == "start_of_forest")
             {
-                roots.GetComponent<SpriteRenderer>().enabled = true;
-                amulet.GetComponent<SpriteRenderer>().enabled = true;
+                roots = GameObject.Find("Root");
+                amulet = GameObject.Find("Amulet");
             }
-
-            Player.wasInShop = true;
-            Player.wasInLords = false;
-            done.SetActive(true);
         }
-        counter.SetText(quest.goal.currentAmount.ToString() + " из " + quest.goal.requiredAmount.ToString());
-        if (questIdPicked == true & Input.GetKeyDown(KeyCode.Q))
-        {
-            windowIsActive = !windowIsActive;
-            if (windowIsActive == false)
-            {
-                questWindow.SetActive(true);    
-            }
-            else
-            {
-                questWindow.SetActive(false);
-            }
-        }    
-    }
 
+        private void Update()
+        {
+            if (quest.goal.IsReached())
+            {
+                if (SceneManager.GetActiveScene().name == "start_of_forest")
+                {
+                    roots.GetComponent<SpriteRenderer>().enabled = true;
+                    amulet.GetComponent<SpriteRenderer>().enabled = true;
+                }
+
+                Player.wasInShop = true;
+                Player.wasInLords = false;
+                done.SetActive(true);
+            }
+            counter.SetText(quest.goal.currentAmount.ToString() + " из " + quest.goal.requiredAmount.ToString());
+            if (questIdPicked == true & Input.GetKeyDown(KeyCode.Q))
+            {
+                windowIsActive = !windowIsActive;
+                if (windowIsActive == false)
+                {
+                    questWindow.SetActive(true);    
+                }
+                else
+                {
+                    questWindow.SetActive(false);
+                }
+            }    
+        }
+
+    }
 }

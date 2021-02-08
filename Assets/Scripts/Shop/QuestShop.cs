@@ -1,12 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class QuestShop : MonoBehaviour
+namespace Shop
 {
-    public GameObject sign;
-    public void Update()
+    public class QuestShop : MonoBehaviour
     {
-        sign.SetActive(Player.wasInLords);
+        public GameObject sign;
+        public void Update()
+        {
+            sign.SetActive(Player.wasInLords);
+        }
     }
 }

@@ -1,43 +1,43 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
-
-public class Slotmist : MonoBehaviour, IPointerClickHandler
+namespace Inventory
 {
-    public GameObject item;
-    public bool empty;
-    public Sprite icon;
-    public string  type;
-    public int ID;
-    public int cost;
-    public string description;
-    public Transform slotIconGO;
-    public int def;
-    public void OnPointerClick(PointerEventData pointerEventData)
+    public class Slotmist : MonoBehaviour, IPointerClickHandler
     {
-        UseItem();
-    }
+        public GameObject item;
+        public bool empty;
+        public Sprite icon;
+        public string  type;
+        public int ID;
+        public int cost;
+        public string description;
+        public Transform slotIconGO;
+        public int def;
+        public void OnPointerClick(PointerEventData pointerEventData)
+        {
+            UseItem();
+        }
 
 
-    private void Start()
-    { 
-        slotIconGO = transform.GetChild(0);        
-    }
+        private void Start()
+        { 
+            slotIconGO = transform.GetChild(0);        
+        }
    
 
 
-    public void UpdateSlotmist()
-    {
-        slotIconGO.GetComponent<Image>().sprite = icon;
+        public void UpdateSlotmist()
+        {
+            slotIconGO.GetComponent<Image>().sprite = icon;
         
-    }
+        }
 
-    public void UseItem()
-    {
-        item.GetComponent<Itemmist>().ItemUsage();
-    }
+        public void UseItem()
+        {
+            item.GetComponent<Itemmist>().ItemUsage();
+        }
     
+    }
 }

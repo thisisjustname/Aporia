@@ -1,33 +1,34 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Weapon : MonoBehaviour
+namespace Battle
 {
-    public float offset;
-    public GameObject projectile;
-    public Transform shotPoint;
-    private float timeBtwShots;
-    public float startTimeBtwShots;
-
-    // Update is called once per frame
-    private void Update()
+    public class Weapon : MonoBehaviour
     {
-        Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-        float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0f,0f,rotZ + offset);
-        if (timeBtwShots <=0)
+        public float offset;
+        public GameObject projectile;
+        public Transform shotPoint;
+        private float timeBtwShots;
+        public float startTimeBtwShots;
+
+        // Update is called once per frame
+        private void Update()
         {
-            if (Input.GetMouseButton(0))
+            Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+            float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(0f,0f,rotZ + offset);
+            if (timeBtwShots <=0)
             {
-                Instantiate(projectile, shotPoint.position, transform.rotation);
-                timeBtwShots = startTimeBtwShots;
+                if (Input.GetMouseButton(0))
+                {
+                    Instantiate(projectile, shotPoint.position, transform.rotation);
+                    timeBtwShots = startTimeBtwShots;
+                }
             }
-        }
-        else
-        {
-            timeBtwShots -= Time.deltaTime;
-        }
+            else
+            {
+                timeBtwShots -= Time.deltaTime;
+            }
         
+        }
     }
 }

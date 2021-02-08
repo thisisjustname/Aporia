@@ -1,22 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class DontDestoy3 : MonoBehaviour
+namespace Questing
 {
-    public static DontDestoy3 instance = null;
-    void Awake()
+    public class DontDestoy3 : MonoBehaviour
     {
-        if (instance == null)
+        public static DontDestoy3 instance = null;
+        void Awake()
         {
-            instance = this;
-        }
-        else
-        {
-            Destroy(this.gameObject);
-            return;
-        }
+            if (instance == null)
+            {
+                instance = this;
+            }
+            else
+            {
+                Destroy(this.gameObject);
+                return;
+            }
         
-        DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(gameObject);
+        }
     }
 }

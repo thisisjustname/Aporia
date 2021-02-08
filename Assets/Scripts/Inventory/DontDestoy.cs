@@ -1,22 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class DontDestoy : MonoBehaviour
+namespace Inventory
 {
-    public static DontDestoy instance = null;
-    void Awake()
+    public class DontDestoy : MonoBehaviour
     {
-        if (instance == null)
+        public static DontDestoy instance = null;
+        void Awake()
         {
-            instance = this;
-        }
-        else
-        {
-            Destroy(this.gameObject);
-            return;
-        }
+            if (instance == null)
+            {
+                instance = this;
+            }
+            else
+            {
+                Destroy(this.gameObject);
+                return;
+            }
         
-        DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(gameObject);
+        }
     }
 }
