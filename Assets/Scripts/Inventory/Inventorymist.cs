@@ -125,8 +125,26 @@ public class Inventorymist : MonoBehaviour
             if(!slot[i].GetComponent<Slotmist>().empty &  slot[i].GetComponent<Slotmist>().description == "Mushroom")
             {
                 slot[i].GetComponent<Slotmist>().icon = null;
+                slot[i].GetComponent<Slotmist>().empty = true;
                 Transform eeee;
                 eeee = slot[i].transform.GetChild(0);    
+                eeee.GetComponent<Image>().sprite = background;
+            }
+            
+        }
+    }
+    
+    public void DeleteMushrom2()
+    {
+        for (int i = 0; i < allSlots; i++)
+        {
+            if(!slot[i].GetComponent<Slotmist>().empty &  slot[i].GetComponent<Slotmist>().description == "Mushroom2")
+            {
+                slot[i].GetComponent<Slotmist>().icon = null;
+                slot[i].GetComponent<Slotmist>().empty = true;
+                Transform eeee;
+                eeee = slot[i].transform.GetChild(0); 
+                Destroy(slot[i].transform.GetChild(1));
                 eeee.GetComponent<Image>().sprite = background;
             }
             

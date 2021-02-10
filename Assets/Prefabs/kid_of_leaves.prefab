@@ -2587,7 +2587,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   god: {fileID: 0}
-  point: {fileID: 0}
   healthBar: {fileID: 7566204566269575679}
 --- !u!95 &7566204567271733905
 Animator:
@@ -2736,7 +2735,7 @@ MonoBehaviour:
   - {x: 0.06015387, y: 0.29996368, z: 0}
   m_ShapePathHash: 1587670135
   m_Mesh: {fileID: 0}
-  m_InstanceId: 93312
+  m_InstanceId: 71792
 --- !u!114 &8818350056724904672
 MonoBehaviour:
   m_ObjectHideFlags: 0

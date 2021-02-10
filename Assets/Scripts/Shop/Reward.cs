@@ -9,4 +9,9 @@ public class Reward : MonoBehaviour
     {
         sign.SetActive(Player.wasInShop);
     }
+
+    public void DestroyMe()
+    {
+        Destroy(gameObject);
+    }
 }

@@ -32,6 +32,30 @@ public class Slotmist : MonoBehaviour, IPointerClickHandler
     public void UpdateSlotmist()
     {
         slotIconGO.GetComponent<Image>().sprite = icon;
+        Transform child = slotIconGO;
+        Image sprite = child.GetComponent<Image>();
+        sprite.SetNativeSize();
+        RectTransform rectTransform = child.GetComponent<RectTransform>();
+
+        float difference;
+        if (rectTransform.sizeDelta.x > rectTransform.sizeDelta.y)
+        {
+            difference = rectTransform.sizeDelta.x / 40;
+        }
+        else
+        {
+            difference = rectTransform.sizeDelta.y / 40;
+        }
+
+        var sizeDelta = rectTransform.sizeDelta;
+        float x = sizeDelta.x / difference;
+        float y = sizeDelta.y / difference;
+        sizeDelta = new Vector2(x, y);
+        rectTransform.sizeDelta = sizeDelta;
+        rectTransform.anchoredPosition = new Vector2(0, 0);
+        rectTransform.anchorMax = new Vector2(0.5f, 0.5f);
+        rectTransform.anchorMin = new Vector2(0.5f, 0.5f);
+
         
     }
 
