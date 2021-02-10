@@ -144,7 +144,7 @@ public class Inventorymist : MonoBehaviour
                 slot[i].GetComponent<Slotmist>().empty = true;
                 Transform eeee;
                 eeee = slot[i].transform.GetChild(0); 
-                Destroy(slot[i].transform.GetChild(1));
+                Destroy(slot[i].transform.GetChild(1).gameObject);
                 eeee.GetComponent<Image>().sprite = background;
             }
             

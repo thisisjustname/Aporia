@@ -12,6 +12,7 @@ public class Mushroom : MonoBehaviour
     {
         //
         sign.SetActive(false);
+        questDone.SetActive(true);
         questGiver.GetComponent<QuestGiver>().quest.goal.currentAmount = 1;
         transform.localScale = new Vector3(4, 4, 4);
     }
