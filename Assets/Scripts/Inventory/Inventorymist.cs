@@ -87,7 +87,7 @@ public class Inventorymist : MonoBehaviour
                 
                 itemObject.transform.parent = slot[i].transform;    
                 itemObject.GetComponent<SpriteRenderer>().enabled = false;
-                Destroy(itemObject);
+                itemObject.SetActive(false);
                 slot[i].GetComponent<Slotmist>().UpdateSlotmist();
                 
                 slot[i].GetComponent<Slotmist>().empty = false;
