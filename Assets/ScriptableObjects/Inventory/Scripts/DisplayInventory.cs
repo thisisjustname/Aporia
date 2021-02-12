@@ -81,8 +81,8 @@ namespace ScriptableObjects.Inventory.Scripts
 
         public GameObject DisplayItem(InventorySlot slot)
         {
-            GameObject prefab = Instantiate(Resources.Load("Panel")) as GameObject;
-            GameObject obj = Instantiate(prefab, Vector3.zero, Quaternion.identity, transform);
+            GameObject obj = Instantiate(Resources.Load("Panel") as GameObject, Vector3.zero, Quaternion.identity,
+                transform);
             obj.GetComponentInChildren<TextMeshProUGUI>().text = slot.amount.ToString("n0");
             Transform child = obj.transform.GetChild(0);
             Image sprite = child.GetComponent<Image>();
