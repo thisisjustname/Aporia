@@ -17,4 +17,9 @@ MonoBehaviour:
   cost: 0
   description: 
   icon: {fileID: 21300000, guid: 6561c3878e0b14643bde69e5465684d9, type: 3}
+  buffs:
+  - attribute: 0
+    value: 1
+    min: 8
+    max: 0
   restoreHeals: 10

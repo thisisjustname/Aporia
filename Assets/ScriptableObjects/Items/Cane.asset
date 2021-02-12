@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ee1a2e78ab6b705439ad69de8de97b53, type: 3}
-  m_Name: Chind
+  m_Name: Cane
   m_EditorClassIdentifier: 
   type: 1
-  iD: 0
+  iD: 4
   cost: 0
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: af5a3d29f5a7248f6abb153ece400acb, type: 3}
   buffs: []
   def: 0
