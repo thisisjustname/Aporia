@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 585236108c0bf4b4288e5c404302f97b, type: 3}
   m_Name: Apple
   m_EditorClassIdentifier: 
-  prefab: {fileID: 3310473282997229128, guid: 65cd3aef326bca4438b4131e5b511f34, type: 3}
   type: 0
-  ID: 0
+  iD: 2
   cost: 0
   description: 
-  icon: {fileID: 21300000, guid: ce6167a2f2bd0b54fa2d188e47fee5f7, type: 3}
+  icon: {fileID: 21300000, guid: 6561c3878e0b14643bde69e5465684d9, type: 3}
   restoreHeals: 10

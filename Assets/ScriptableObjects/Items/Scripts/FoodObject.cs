@@ -1,14 +1,14 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-[CreateAssetMenu(fileName = "New food object", menuName = "Inventory system/Items/Food")]
-public class FoodObject : ItemObject
+namespace ScriptableObjects.Items.Scripts
 {
-    public int restoreHeals;
-    public void Awake()
+    [CreateAssetMenu(fileName = "New food object", menuName = "Inventory system/Items/Food")]
+    public class FoodObject : ItemObject
     {
-        type = ItemType.Food;
+        public int restoreHeals;
+        public void Awake()
+        {
+            type = ItemType.Food;
+        }
     }
 }

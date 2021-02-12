@@ -1,22 +1,38 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
+using ScriptableObjects.Items.Scripts;
+using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
-public enum ItemType
+namespace ScriptableObjects.Items.Scripts
 {
-    Food,
-    Equipment,
-    Default
+    public enum ItemType
+    {
+        Food,
+        Equipment,
+        Default
+    }
+    
+    public abstract class ItemObject : ScriptableObject
+    {
+        public ItemType  type;
+        public int iD;
+        public int cost;
+        [TextArea(15, 20)]
+        public string description;
+        public Sprite icon;
+    }
 }
 
-[CreateAssetMenu(fileName = "Item")]
-public abstract class ItemObject : ScriptableObject
+[System.Serializable]
+public class Item
 {
-    public ItemType  type;
-    public int ID;
-    public int cost;
-    [TextArea(15, 20)]
-    public string description;
-    public Sprite icon;
+    public string Name;
+    public int Id;
+
+    public Item(ItemObject item)
+    {
+        Name = item.name;
+        Id = item.iD;
+    }
 }

@@ -1,4 +1,6 @@
 ﻿using Questing;
+using ScriptableObjects.Inventory.Scripts;
+using ScriptableObjects.Items.Scripts;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -39,10 +41,10 @@ public class Player : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
-        {
-            TakeGamage(20);
-        }
+            inventory.Save();
         
+        if (Input.GetKeyDown(KeyCode.L))
+            inventory.Load();
     }
 
     void TakeGamage(int damage)
@@ -68,16 +70,16 @@ public class Player : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D other)
     {
-        var item = other.GetComponent<Item>();
+        var item = other.GetComponent<GroundItem>();
         if (item)
         {
-            inventory.AddItem(item.item, 1);
+            inventory.AddItem(new Item(item.item), 1);
             Destroy(other.gameObject);
         }
     }
 
     private void OnApplicationQuit()
     {
-        inventory.Container.Clear();
+        inventory.Container.Items.Clear();
     }
 }

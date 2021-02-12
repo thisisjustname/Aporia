@@ -1,14 +1,14 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-[CreateAssetMenu(fileName = "New equipment object", menuName = "Inventory system/Items/Equipment")]
-public class EquipmentObject : ItemObject
+namespace ScriptableObjects.Items.Scripts
 {
-    public int def;
-    public void Awake()
+    [CreateAssetMenu(fileName = "New equipment object", menuName = "Inventory system/Items/Equipment")]
+    public class EquipmentObject : ItemObject
     {
-        type = ItemType.Equipment;
+        public int def;
+        public void Awake()
+        {
+            type = ItemType.Equipment;
+        }
     }
 }
