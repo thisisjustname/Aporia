@@ -29,10 +29,9 @@
     <explicitExcludes>
       <Path>.git</Path>
       <Path>.idea</Path>
-      <Path>Game_Data</Path>
       <Path>Library</Path>
       <Path>Logs</Path>
-      <Path>MonoBleedingEdge</Path>
+      <Path>Temp</Path>
       <Path>UserSettings</Path>
       <Path>obj</Path>
     </explicitExcludes>
