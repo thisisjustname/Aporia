@@ -55,6 +55,7 @@ namespace ScriptableObjects.Inventory.Scripts
                 Container = (Inventory) formatter.Deserialize(stream);
                 stream.Close();
             }
+            DisplayInventory.instance.ClearDisplay();
         }
 
         [ContextMenu("Clear")]

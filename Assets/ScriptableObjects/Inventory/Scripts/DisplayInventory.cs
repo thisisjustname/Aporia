@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Pathfinding;
 using TMPro;
 using UnityEngine;
@@ -8,6 +9,8 @@ namespace ScriptableObjects.Inventory.Scripts
 {
     public class DisplayInventory : MonoBehaviour
     {
+        public static DisplayInventory instance;
+        
         public InventoryObject inventory;
         private Dictionary<InventorySlot, GameObject> itemsDisplayed = new Dictionary<InventorySlot, GameObject>();
         private bool InventoryEnabled = false;
@@ -25,6 +28,11 @@ namespace ScriptableObjects.Inventory.Scripts
         
             maxSpeed = Player.instance.GetComponent<AIPath>().maxSpeed;
             CreateDisplay();
+        }
+
+        public void Awake()
+        {
+            instance = this;
         }
 
         private void Update()
@@ -77,6 +85,13 @@ namespace ScriptableObjects.Inventory.Scripts
                 InventorySlot slot = inventory.Container.Items[i];
                 DisplayItem(slot);
             }    
+        }
+
+        public void ClearDisplay()
+        {
+            foreach (Transform child in transform) {
+                Destroy(child.gameObject);
+            }
         }
 
         public GameObject DisplayItem(InventorySlot slot)
