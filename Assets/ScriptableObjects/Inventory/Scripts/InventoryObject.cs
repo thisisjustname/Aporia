@@ -92,7 +92,6 @@ namespace ScriptableObjects.Inventory.Scripts
                 }
                 stream.Close();
             }
-            // DisplayInventory.instance.ClearDisplay();
         }
 
         [ContextMenu("Clear")]

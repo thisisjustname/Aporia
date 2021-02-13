@@ -110,13 +110,6 @@ namespace ScriptableObjects.Inventory.Scripts
         }
         
 
-        public void ClearDisplay()
-        {
-            foreach (Transform child in transform) {
-                Destroy(child.gameObject);
-            }
-        }
-
         public void DisplayItem(Image _image, RectTransform _rectTransform, int _amount)
         {
             SetNormalSize(_image, _rectTransform);
