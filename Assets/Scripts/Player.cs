@@ -1,10 +1,13 @@
 ﻿using Questing;
 using ScriptableObjects.Inventory.Scripts;
 using ScriptableObjects.Items.Scripts;
+using UI;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public MouseItem mouseItem = new MouseItem();
+    
     public static Player instance;
     public InventoryObject inventory;
     
@@ -80,6 +83,6 @@ public class Player : MonoBehaviour
 
     private void OnApplicationQuit()
     {
-        inventory.Container.Items = new InventorySlot[25];
+        inventory.Container.Items = new InventorySlot[54];
     }
 }

@@ -8,7 +8,7 @@ namespace ScriptableObjects.Items.Scripts
         public int def;
         public void Awake()
         {
-            type = ItemType.Equipment;
+            type = ItemType.Chest;
         }
     }
 }

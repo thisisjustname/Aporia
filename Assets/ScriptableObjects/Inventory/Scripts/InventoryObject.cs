@@ -3,6 +3,8 @@ using System.IO;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using ScriptableObjects.Items.Scripts;
+using UI;
+using UnityEditor;
 using UnityEngine;
 
 namespace ScriptableObjects.Inventory.Scripts
@@ -97,20 +99,30 @@ namespace ScriptableObjects.Inventory.Scripts
         [ContextMenu("Clear")]
         public void Clear()
         {
-            Container = new Inventory();
+            Container.Clear();
         }
     }
 
     [System.Serializable]
     public class Inventory
     {
-        public InventorySlot[] Items = new InventorySlot[25];
+        public InventorySlot[] Items = new InventorySlot[54];
+
+        public void Clear()
+        {
+            for (int i = Items.Length - 1; i >= 0; i--)
+            {
+                Items[i].UpdateSlot(-1, new Item(), 0);
+            }
+        }
     }
 
     [System.Serializable]
     public class InventorySlot
     {
-        public int iD = -1;
+        public ItemType[] AllowedItems = new ItemType[0];
+        public UserInterface parent;
+        public int iD;
         public Item item;
         public int amount;
 
@@ -138,6 +150,22 @@ namespace ScriptableObjects.Inventory.Scripts
         public void AddAmount(int value)
         {
             amount += value;
+        }
+
+        public bool CanPlaceinSlot(ItemObject _item)
+        {
+            if (AllowedItems.Length <= 0)
+                return true;
+            
+            for (int i = AllowedItems.Length - 1; i >= 0; i--)
+            {
+                if (_item.type == AllowedItems[i])
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
     }
 }

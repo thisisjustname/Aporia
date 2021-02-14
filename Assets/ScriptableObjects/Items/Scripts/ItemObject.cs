@@ -6,7 +6,11 @@ namespace ScriptableObjects.Items.Scripts
     public enum ItemType
     {
         Food,
-        Equipment,
+        Helmet,
+        Weapon,
+        Shield,
+        Boots,
+        Chest,
         Default
     }
 
@@ -43,6 +47,11 @@ public class Item
     public ItemBuff[] buffs;
     public int Id;
 
+    public Item()
+    {
+        Name = "";
+        Id = -1;
+    }
     public Item(ItemObject item)
     {
         Name = item.name;
