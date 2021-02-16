@@ -24,13 +24,14 @@ namespace ScriptableObjects.Items.Scripts
     
     public abstract class ItemObject : ScriptableObject
     {
-        public ItemType  type;
-        public int iD;
+        public ItemType type;
+        public bool stackable;
+        public int iD = -1;
         public int cost;
         [TextArea(15, 20)]
         public string description;
         public Sprite icon;
-        public ItemBuff[] buffs;
+        public Item data = new Item();
 
         public Item CreateItem()
         {
@@ -55,14 +56,14 @@ public class Item
     public Item(ItemObject item)
     {
         Name = item.name;
-        Id = item.iD;
+        Id = item.data.Id;
 
-        buffs = new ItemBuff[item.buffs.Length];
+        buffs = new ItemBuff[item.data.buffs.Length];
         for (int i = buffs.Length - 1; i >= 0; i--)
         {
-            buffs[i] = new ItemBuff(item.buffs[i].min, item.buffs[i].max)
+            buffs[i] = new ItemBuff(item.data.buffs[i].min, item.data.buffs[i].max)
             {
-                attribute = item.buffs[i].attribute
+                attribute = item.data.buffs[i].attribute
             };
         }
     }

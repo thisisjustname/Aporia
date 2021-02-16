@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Test.unity
+    guid: 5776c63d6307e3c49835c38c0c8ce8ff
+  - enabled: 1
     path: Assets/Scenes/House.unity
     guid: 670749bc46e29f4459afa777d8d6731d
   - enabled: 1
@@ -14,9 +17,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menu.unity
     guid: 61b961ffca0a0f24aa2877f86ab8fc3c
-  - enabled: 1
-    path: Assets/Scenes/Test.unity
-    guid: 5776c63d6307e3c49835c38c0c8ce8ff
   - enabled: 1
     path: Assets/Scenes/house_of_lords.unity
     guid: c70e2c0d607c5d748ac1d23df2deca48

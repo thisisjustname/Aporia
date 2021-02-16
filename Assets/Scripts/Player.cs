@@ -6,10 +6,11 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public MouseItem mouseItem = new MouseItem();
+    //public MouseData mouseData = new MouseData();
     
     public static Player instance;
     public InventoryObject inventory;
+    public InventoryObject equipment;
     
     public int maxHealth = 100;
     public static bool wasInShop = false;
@@ -44,10 +45,16 @@ public class Player : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
+        {
             inventory.Save();
+            equipment.Save();
+        }
         
         if (Input.GetKeyDown(KeyCode.L))
+        {
             inventory.Load();
+            equipment.Load();
+        }
     }
 
     void TakeGamage(int damage)
@@ -76,13 +83,18 @@ public class Player : MonoBehaviour
         var item = other.GetComponent<GroundItem>();
         if (item)
         {
+            if (inventory.AddItem(new Item(item.item), 1))
+            {
+                Destroy(other.gameObject);
+            }
+            
             inventory.AddItem(new Item(item.item), 1);
-            Destroy(other.gameObject);
         }
     }
 
     private void OnApplicationQuit()
     {
-        inventory.Container.Items = new InventorySlot[54];
+        inventory.Container.Clear();
+        equipment.Container.Clear();
     }
 }

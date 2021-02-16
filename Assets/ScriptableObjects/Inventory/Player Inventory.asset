@@ -16,153 +16,339 @@ MonoBehaviour:
   database: {fileID: 11400000, guid: fd00c56923f39ea4b9f03942f322d9d7, type: 2}
   Container:
     Items:
-    - iD: -1
+    - AllowedItems: 
       item:
         Name: 
         buffs: []
-        Id: 0
+        Id: -1
       amount: 0
-    - iD: -1
+    - AllowedItems: 
       item:
         Name: 
         buffs: []
-        Id: 0
+        Id: -1
       amount: 0
-    - iD: -1
+    - AllowedItems: 
       item:
         Name: 
         buffs: []
-        Id: 0
+        Id: -1
       amount: 0
-    - iD: -1
+    - AllowedItems: 
       item:
         Name: 
         buffs: []
-        Id: 0
+        Id: -1
       amount: 0
-    - iD: -1
+    - AllowedItems: 
       item:
         Name: 
         buffs: []
-        Id: 0
+        Id: -1
       amount: 0
-    - iD: -1
+    - AllowedItems: 
       item:
         Name: 
         buffs: []
-        Id: 0
+        Id: -1
       amount: 0
-    - iD: -1
+    - AllowedItems: 
       item:
         Name: 
         buffs: []
-        Id: 0
+        Id: -1
       amount: 0
-    - iD: -1
+    - AllowedItems: 
       item:
         Name: 
         buffs: []
-        Id: 0
+        Id: -1
       amount: 0
-    - iD: -1
+    - AllowedItems: 
       item:
         Name: 
         buffs: []
-        Id: 0
+        Id: -1
       amount: 0
-    - iD: -1
+    - AllowedItems: 
       item:
         Name: 
         buffs: []
-        Id: 0
+        Id: -1
       amount: 0
-    - iD: -1
+    - AllowedItems: 
       item:
         Name: 
         buffs: []
-        Id: 0
+        Id: -1
       amount: 0
-    - iD: -1
+    - AllowedItems: 
       item:
         Name: 
         buffs: []
-        Id: 0
+        Id: -1
       amount: 0
-    - iD: -1
+    - AllowedItems: 
       item:
         Name: 
         buffs: []
-        Id: 0
+        Id: -1
       amount: 0
-    - iD: -1
+    - AllowedItems: 
       item:
         Name: 
         buffs: []
-        Id: 0
+        Id: -1
       amount: 0
-    - iD: -1
+    - AllowedItems: 
       item:
         Name: 
         buffs: []
-        Id: 0
+        Id: -1
       amount: 0
-    - iD: -1
+    - AllowedItems: 
       item:
         Name: 
         buffs: []
-        Id: 0
+        Id: -1
       amount: 0
-    - iD: -1
+    - AllowedItems: 
       item:
         Name: 
         buffs: []
-        Id: 0
+        Id: -1
       amount: 0
-    - iD: -1
+    - AllowedItems: 
       item:
         Name: 
         buffs: []
-        Id: 0
+        Id: -1
       amount: 0
-    - iD: -1
+    - AllowedItems: 
       item:
         Name: 
         buffs: []
-        Id: 0
+        Id: -1
       amount: 0
-    - iD: -1
+    - AllowedItems: 
       item:
         Name: 
         buffs: []
-        Id: 0
+        Id: -1
       amount: 0
-    - iD: -1
+    - AllowedItems: 
       item:
         Name: 
         buffs: []
-        Id: 0
+        Id: -1
       amount: 0
-    - iD: -1
+    - AllowedItems: 
       item:
         Name: 
         buffs: []
-        Id: 0
+        Id: -1
       amount: 0
-    - iD: -1
+    - AllowedItems: 
       item:
         Name: 
         buffs: []
-        Id: 0
+        Id: -1
       amount: 0
-    - iD: -1
+    - AllowedItems: 
       item:
         Name: 
         buffs: []
-        Id: 0
+        Id: -1
       amount: 0
-    - iD: -1
+    - AllowedItems: 
       item:
         Name: 
         buffs: []
-        Id: 0
+        Id: -1
+      amount: 0
+    - AllowedItems: 
+      item:
+        Name: 
+        buffs: []
+        Id: -1
+      amount: 0
+    - AllowedItems: 
+      item:
+        Name: 
+        buffs: []
+        Id: -1
+      amount: 0
+    - AllowedItems: 
+      item:
+        Name: 
+        buffs: []
+        Id: -1
+      amount: 0
+    - AllowedItems: 
+      item:
+        Name: 
+        buffs: []
+        Id: -1
+      amount: 0
+    - AllowedItems: 
+      item:
+        Name: 
+        buffs: []
+        Id: -1
+      amount: 0
+    - AllowedItems: 
+      item:
+        Name: 
+        buffs: []
+        Id: -1
+      amount: 0
+    - AllowedItems: 
+      item:
+        Name: 
+        buffs: []
+        Id: -1
+      amount: 0
+    - AllowedItems: 
+      item:
+        Name: 
+        buffs: []
+        Id: -1
+      amount: 0
+    - AllowedItems: 
+      item:
+        Name: 
+        buffs: []
+        Id: -1
+      amount: 0
+    - AllowedItems: 
+      item:
+        Name: 
+        buffs: []
+        Id: -1
+      amount: 0
+    - AllowedItems: 
+      item:
+        Name: 
+        buffs: []
+        Id: -1
+      amount: 0
+    - AllowedItems: 
+      item:
+        Name: 
+        buffs: []
+        Id: -1
+      amount: 0
+    - AllowedItems: 
+      item:
+        Name: 
+        buffs: []
+        Id: -1
+      amount: 0
+    - AllowedItems: 
+      item:
+        Name: 
+        buffs: []
+        Id: -1
+      amount: 0
+    - AllowedItems: 
+      item:
+        Name: 
+        buffs: []
+        Id: -1
+      amount: 0
+    - AllowedItems: 
+      item:
+        Name: 
+        buffs: []
+        Id: -1
+      amount: 0
+    - AllowedItems: 
+      item:
+        Name: 
+        buffs: []
+        Id: -1
+      amount: 0
+    - AllowedItems: 
+      item:
+        Name: 
+        buffs: []
+        Id: -1
+      amount: 0
+    - AllowedItems: 
+      item:
+        Name: 
+        buffs: []
+        Id: -1
+      amount: 0
+    - AllowedItems: 
+      item:
+        Name: 
+        buffs: []
+        Id: -1
+      amount: 0
+    - AllowedItems: 
+      item:
+        Name: 
+        buffs: []
+        Id: -1
+      amount: 0
+    - AllowedItems: 
+      item:
+        Name: 
+        buffs: []
+        Id: -1
+      amount: 0
+    - AllowedItems: 
+      item:
+        Name: 
+        buffs: []
+        Id: -1
+      amount: 0
+    - AllowedItems: 
+      item:
+        Name: 
+        buffs: []
+        Id: -1
+      amount: 0
+    - AllowedItems: 
+      item:
+        Name: 
+        buffs: []
+        Id: -1
+      amount: 0
+    - AllowedItems: 
+      item:
+        Name: 
+        buffs: []
+        Id: -1
+      amount: 0
+    - AllowedItems: 
+      item:
+        Name: 
+        buffs: []
+        Id: -1
+      amount: 0
+    - AllowedItems: 
+      item:
+        Name: 
+        buffs: []
+        Id: -1
+      amount: 0
+    - AllowedItems: 
+      item:
+        Name: 
+        buffs: []
+        Id: -1
+      amount: 0
+    - AllowedItems: 
+      item:
+        Name: 
+        buffs: []
+        Id: -1
+      amount: 0
+    - AllowedItems: 
+      item:
+        Name: 
+        buffs: []
+        Id: -1
       amount: 0

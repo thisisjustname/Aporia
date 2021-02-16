@@ -1,11 +1,11 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using ScriptableObjects.Inventory.Scripts;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 namespace UI
 {
-    public class StaticInterface : UserInterface
+    public class ShopInterface : UserInterface
     {
 
         public GameObject[] slots;

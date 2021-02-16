@@ -12,8 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b08b2af500cfd254c9c94b9477a7542f, type: 3}
   m_Name: Amulet
   m_EditorClassIdentifier: 
-  type: 2
+  type: 6
+  stackable: 1
   iD: 3
   cost: 0
   description: 
   icon: {fileID: 21300000, guid: 1513714b02173e74d9e3af3d2ede6869, type: 3}
+  data:
+    Name: 
+    buffs: []
+    Id: 0
