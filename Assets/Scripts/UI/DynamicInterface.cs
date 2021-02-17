@@ -11,26 +11,7 @@ namespace UI
 
         public override void OpenInterface()
         {
-            if (Input.GetKeyDown(KeyCode.I))
-            {
-                InventoryEnabled = !InventoryEnabled;
-                if (InventoryEnabled == true)
-                {
-                    Debug.Log("Inventory is close");
-                    airPath.maxSpeed = 0;
-                    target.transform.position = gameObject.transform.position;
-                    target.SetActive(false);
-                    inventoryCanvas.SetActive(true);
-
-                }
-                else
-                {
-                    Debug.Log("Inventory is open");
-                    airPath.maxSpeed = maxSpeed;
-                    inventoryCanvas.SetActive(false);
-                    target.SetActive(true);
-                }
-            }
+            
         }
 
         public override void CreateSlots()

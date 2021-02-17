@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee1a2e78ab6b705439ad69de8de97b53, type: 3}
   m_Name: Shield
   m_EditorClassIdentifier: 
-  type: 3
+  type: 2
   stackable: 0
-  iD: 0
   cost: 0
   description: 
   icon: {fileID: 21300000, guid: 7b72daddf2bae4b5eac567cacf4b8c5a, type: 3}

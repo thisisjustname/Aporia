@@ -13,20 +13,9 @@ namespace UI
     {
         public InventoryObject inventory;
         public Dictionary<GameObject, InventorySlot> slotsOnInterface = new Dictionary<GameObject, InventorySlot>();
-        protected bool InventoryEnabled = true;
-        public GameObject target;
-        protected float maxSpeed;
-        public GameObject inventoryCanvas;
-        public AIPath airPath;
-    
+
         void Start()
         {
-            target = GameObject.Find("Target");
-            airPath = Player.instance.GetComponent<AIPath>();
-            inventoryCanvas = GameObject.Find("Inventory");
-            // inventoryCanvas.SetActive(InventoryEnabled);
-            maxSpeed = Player.instance.GetComponent<AIPath>().maxSpeed;
-
             for (int i = inventory.Container.Items.Length - 1; i >= 0; i--)
             {
                 inventory.Container.Items[i].parent = this;

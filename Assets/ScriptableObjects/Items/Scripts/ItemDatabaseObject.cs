@@ -7,20 +7,26 @@ namespace ScriptableObjects.Items.Scripts
     public class ItemDatabaseObject: ScriptableObject, ISerializationCallbackReceiver
     {
         public ItemObject[] items;
-        public Dictionary<int, ItemObject> GetItem = new Dictionary<int, ItemObject>();
+
+        [ContextMenu("Update ID's")]
+        public void UpdateId()
+        {
+            for (int i = items.Length - 1; i >= 0; i--)
+            {
+                if (items[i].data.Id != i)
+                    items[i].data.Id = i;
+                
+            }
+        }
         
         public void OnBeforeSerialize()
         {
-            GetItem = new Dictionary<int, ItemObject>();
+           
         }
 
         public void OnAfterDeserialize()
         {
-            for (int i = items.Length - 1; i >= 0; i--)
-            {
-                items[i].data.Id = i;
-                GetItem.Add(i, items[i]);   
-            }
+            UpdateId();
         }
     }
 }

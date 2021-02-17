@@ -26,7 +26,6 @@ namespace ScriptableObjects.Items.Scripts
     {
         public ItemType type;
         public bool stackable;
-        public int iD = -1;
         public int cost;
         [TextArea(15, 20)]
         public string description;

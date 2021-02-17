@@ -23,7 +23,7 @@ namespace ScriptableObjects.Inventory.Scripts
                 return false;
             
             InventorySlot slot = FindItemOnInventiry(_item);
-            if (!database.GetItem[_item.Id].stackable || slot == null)
+            if (!database.items[_item.Id].stackable || slot == null)
             {
                 SetEmptySlot(_item, _amount);
                 return true;
@@ -156,7 +156,7 @@ namespace ScriptableObjects.Inventory.Scripts
             {
                 if (item.Id >= 0)
                 {
-                    return parent.inventory.database.GetItem[item.Id];
+                    return parent.inventory.database.items[item.Id];
                 }   
 
                 return null; 
