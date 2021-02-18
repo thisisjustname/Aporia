@@ -1,6 +1,8 @@
-﻿using Pathfinding;
+﻿using System;
+using Pathfinding;
 using UnityEditor.UIElements;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace UI
 {
@@ -11,16 +13,28 @@ namespace UI
         public float maxSpeed;
         public GameObject inventory;
         public GameObject equipment;
+        public GameObject uIPlayerTest;
+        public Canvas uIPlayerTestCanvas;
         public AIPath airPath;
+
+        public void Awake()
+        {
+            uIPlayerTestCanvas = uIPlayerTest.GetComponent<Canvas>();
+            // inventory = gameObject.transform.GetChild(0).gameObject;
+            // equipment = gameObject.transform.GetChild(1).gameObject;
+            //
+            // inventory.SetActive(true);
+            // equipment.SetActive(true);
+        }
 
         void Start()
         {
             target = GameObject.Find("Target");
             airPath = Player.instance.GetComponent<AIPath>();
-            inventory = gameObject.transform.GetChild(0).gameObject;
-            equipment = gameObject.transform.GetChild(1).gameObject;
-            inventory.SetActive(InventoryEnabled);
-            equipment.SetActive(InventoryEnabled);
+
+            uIPlayerTestCanvas.enabled = InventoryEnabled;
+            // inventory.SetActive(InventoryEnabled);
+            // equipment.SetActive(InventoryEnabled);
             // inventoryCanvas.SetActive(InventoryEnabled);
             maxSpeed = Player.instance.GetComponent<AIPath>().maxSpeed;
         }
@@ -40,15 +54,17 @@ namespace UI
                     airPath.maxSpeed = 0;
                     target.transform.position = gameObject.transform.position;
                     target.SetActive(false);
-                    inventory.SetActive(true);
-                    equipment.SetActive(true);
+                    uIPlayerTestCanvas.enabled = InventoryEnabled;
+                    // inventory.SetActive(true);
+                    // equipment.SetActive(true);
                 }
                 else
                 {
                     airPath.maxSpeed = maxSpeed;
-                    inventory.SetActive(false);
                     target.SetActive(true);
-                    equipment.SetActive(false);
+                    // inventory.SetActive(false);
+                    // equipment.SetActive(false);
+                    uIPlayerTestCanvas.enabled = InventoryEnabled;
                 }
             }
         }

@@ -87,8 +87,6 @@ public class Player : MonoBehaviour
             {
                 Destroy(other.gameObject);
             }
-            
-            inventory.AddItem(new Item(item.item), 1);
         }
     }
 

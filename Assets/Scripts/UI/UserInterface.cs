@@ -16,21 +16,46 @@ namespace UI
 
         void Start()
         {
-            for (int i = inventory.Container.Items.Length - 1; i >= 0; i--)
+            for (int i = inventory.GetSlots.Length - 1; i >= 0; i--)
             {
-                inventory.Container.Items[i].parent = this;
+                inventory.GetSlots[i].parent = this;
+                inventory.GetSlots[i].OnAfterUpdate += OnSlotUpdate;
             }
             
             CreateSlots();
             AddEvent(gameObject, EventTriggerType.PointerEnter, delegate { OnEnterInterface(gameObject);});
             AddEvent(gameObject, EventTriggerType.PointerExit, delegate { OnExitInterface(gameObject);});
         }
-        
-        private void Update()
+
+        private void OnSlotUpdate(InventorySlot _slot)
         {
-            UpdateSlots();
-            OpenInterface();
+            if (_slot.item.Id >= 0)
+            {
+                Transform child = _slot.slotDisplay.transform.GetChild(0);
+                Image image = child.GetComponentInChildren<Image>();
+                image.sprite = _slot.ItemObject.icon;
+
+                DisplayItem(image, child.GetComponent<RectTransform>(), _slot.amount);
+                image.color = new Color(1, 1, 1, 1);
+
+                _slot.slotDisplay.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text =
+                    _slot.amount == 1 ? "" : _slot.amount.ToString();
+            }
+            else
+            {
+                Transform child = _slot.slotDisplay.transform.GetChild(0);
+                Image image = child.GetComponentInChildren<Image>();
+                image.sprite = null;
+                image.color = new Color(1, 1, 1, 0);
+                _slot.slotDisplay.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "";
+            }
         }
+
+        // private void Update()
+        // {
+        //     UpdateSlots();
+        //     OpenInterface();
+        // }
 
         public abstract void OpenInterface();
         

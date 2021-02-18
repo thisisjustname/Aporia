@@ -17,7 +17,7 @@ namespace UI
         public override void CreateSlots()
         {
             slotsOnInterface = new Dictionary<GameObject, InventorySlot>();
-            for (int i = inventory.Container.Items.Length - 1; i >= 0; i--)
+            for (int i = inventory.Container.Slots.Length - 1; i >= 0; i--)
             {
                 var obj = slots[i];
                 
@@ -27,7 +27,7 @@ namespace UI
                 AddEvent(obj, EventTriggerType.EndDrag, delegate { OnDragEnd(obj);});
                 AddEvent(obj, EventTriggerType.Drag, delegate { OnDrag(obj);});
 
-                slotsOnInterface.Add(obj, inventory.Container.Items[i]);
+                slotsOnInterface.Add(obj, inventory.Container.Slots[i]);
             }
         }
     }
