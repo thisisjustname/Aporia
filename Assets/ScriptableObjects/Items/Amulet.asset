@@ -19,5 +19,9 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 1513714b02173e74d9e3af3d2ede6869, type: 3}
   data:
     Name: 
-    buffs: []
-    Id: -1
+    buffs:
+    - attribute: 2
+      value: 0
+      min: 1
+      max: 100
+    Id: 0

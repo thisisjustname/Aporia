@@ -550,6 +550,8 @@ MonoBehaviour:
   maxSpeed: 0
   inventory: {fileID: 0}
   equipment: {fileID: 0}
+  uIPlayerTest: {fileID: 1986817311}
+  uIPlayerTestCanvas: {fileID: 0}
   airPath: {fileID: 0}
 --- !u!43 &162435511
 Mesh:
@@ -3122,6 +3124,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1986817311 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4877996794559036005, guid: f68336e6ebbf23a46b0f0efb88af28ee, type: 3}
+  m_PrefabInstance: {fileID: 4877996794539507223}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2080138631
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3181,6 +3188,22 @@ PrefabInstance:
       propertyPath: inventory
       value: 
       objectReference: {fileID: 11400000, guid: c77945de7ac3a8242a8d3321a18b71dc, type: 2}
+    - target: {fileID: 7566204567271733904, guid: 2a4a666ad916b00488dd3a5c5a401602, type: 3}
+      propertyPath: attributes.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7566204567271733904, guid: 2a4a666ad916b00488dd3a5c5a401602, type: 3}
+      propertyPath: attributes.Array.data[1].type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7566204567271733904, guid: 2a4a666ad916b00488dd3a5c5a401602, type: 3}
+      propertyPath: attributes.Array.data[2].type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7566204567271733904, guid: 2a4a666ad916b00488dd3a5c5a401602, type: 3}
+      propertyPath: attributes.Array.data[3].type
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7566204567271733907, guid: 2a4a666ad916b00488dd3a5c5a401602, type: 3}
       propertyPath: shileld
       value: 
@@ -3247,6 +3270,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7566204567532359142, guid: 2a4a666ad916b00488dd3a5c5a401602, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8790880312519291650, guid: 2a4a666ad916b00488dd3a5c5a401602, type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8818350056724904672, guid: 2a4a666ad916b00488dd3a5c5a401602, type: 3}
