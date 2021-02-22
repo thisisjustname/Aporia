@@ -1,18 +1,15 @@
-using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using ScriptableObjects.Items.Scripts;
-using UI;
-using UnityEditor;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public enum InterfaceType
 {
     Inventory,
     Equipment,
-    Chest
+    Chest,
+    Shop
 }
 
 namespace ScriptableObjects.Inventory.Scripts
@@ -38,7 +35,7 @@ namespace ScriptableObjects.Inventory.Scripts
                 SetEmptySlot(_item, _amount);
                 return true;
             }
-            slot.AddAmount(_amount);
+            slot.ChangeAmount(_amount);
             return true;
         }
 
@@ -83,7 +80,7 @@ namespace ScriptableObjects.Inventory.Scripts
 
         public void SwapItems(InventorySlot item1, InventorySlot item2)
         {
-            if (item2.CanPlaceinSlot(item1.ItemObject) && item1.CanPlaceinSlot(item2.ItemObject))
+            if (item2.CanPlaceInSlot(item1.ItemObject) && item1.CanPlaceInSlot(item2.ItemObject))
             {
                 InventorySlot temp = new InventorySlot(item2.item, item2.amount);
                 item2.UpdateSlot(item1.item, item1.amount);

@@ -10,8 +10,8 @@ namespace Shop
           {
                if (other.gameObject.CompareTag("Player"))
                {
-                    ScoreManager.instance.ChangeScore(coinValue);
-                    Destroy(this.gameObject);
+                    Player.instance.currentMoney += coinValue;
+                    Destroy(gameObject);
                }
           }
      }

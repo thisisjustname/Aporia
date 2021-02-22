@@ -1,8 +1,5 @@
-﻿using System;
-using Pathfinding;
-using UnityEditor.UIElements;
+﻿using Pathfinding;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace UI
 {
@@ -31,12 +28,13 @@ namespace UI
         {
             target = GameObject.Find("Target");
             airPath = Player.instance.GetComponent<AIPath>();
+            maxSpeed = Player.instance.GetComponent<AIPath>().maxSpeed;
 
             uIPlayerTestCanvas.enabled = InventoryEnabled;
             // inventory.SetActive(InventoryEnabled);
             // equipment.SetActive(InventoryEnabled);
             // inventoryCanvas.SetActive(InventoryEnabled);
-            maxSpeed = Player.instance.GetComponent<AIPath>().maxSpeed;
+
         }
 
         public void Update()

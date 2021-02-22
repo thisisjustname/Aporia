@@ -13,9 +13,22 @@ namespace UI
     {
         public InventoryObject inventory;
         public Dictionary<GameObject, InventorySlot> slotsOnInterface = new Dictionary<GameObject, InventorySlot>();
+        
+        public bool InventoryEnabled = true;
+        public GameObject target;
+        public float maxSpeed;
+        public GameObject ui;
+        public Canvas uiCanvas;
+        public AIPath airPath;
 
         void Start()
         {
+            target = GameObject.Find("Target");
+            airPath = Player.instance.GetComponent<AIPath>();
+            maxSpeed = Player.instance.GetComponent<AIPath>().maxSpeed;
+            uiCanvas = ui.GetComponent<Canvas>();
+            uiCanvas.enabled = InventoryEnabled;
+            
             for (int i = inventory.GetSlots.Length - 1; i >= 0; i--)
             {
                 inventory.GetSlots[i].parent = this;
@@ -27,100 +40,121 @@ namespace UI
             AddEvent(gameObject, EventTriggerType.PointerExit, delegate { OnExitInterface(gameObject);});
         }
 
-        private void OnSlotUpdate(InventorySlot _slot)
+        private void OnSlotUpdate(InventorySlot slot)
         {
-            if (_slot.item.Id >= 0)
+            if (slot.item.Id >= 0)
             {
-                Transform child = _slot.slotDisplay.transform.GetChild(0);
+                Transform child = slot.slotDisplay.transform.GetChild(0);
                 Image image = child.GetComponentInChildren<Image>();
-                image.sprite = _slot.ItemObject.icon;
+                image.sprite = slot.ItemObject.icon;
 
-                DisplayItem(image, child.GetComponent<RectTransform>(), _slot.amount);
+                DisplayItem(image, child.GetComponent<RectTransform>(), slot.amount);
                 image.color = new Color(1, 1, 1, 1);
 
-                _slot.slotDisplay.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text =
-                    _slot.amount == 1 ? "" : _slot.amount.ToString();
+                slot.slotDisplay.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text =
+                    slot.amount == 1 ? "" : slot.amount.ToString();
+
+                if (inventory.type == InterfaceType.Shop)
+                {
+                    Button button = slot.slotDisplay.transform.GetChild(3).GetComponent<Button>();
+                    button.onClick.RemoveAllListeners();
+                    button.onClick.AddListener(delegate { BuyItem(slot.item.Id); });
+                    TextMeshProUGUI cost = slot.slotDisplay.transform.GetChild(2).GetComponent<TextMeshProUGUI>();
+                    cost.text = string.Concat(slot.ItemObject.cost, " $");
+                }
             }
             else
             {
-                Transform child = _slot.slotDisplay.transform.GetChild(0);
+                Transform child = slot.slotDisplay.transform.GetChild(0);
                 Image image = child.GetComponentInChildren<Image>();
                 image.sprite = null;
                 image.color = new Color(1, 1, 1, 0);
-                _slot.slotDisplay.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "";
+                slot.slotDisplay.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "";
+                
+                
+                if (inventory.type == InterfaceType.Shop)
+                {
+                    Button button = slot.slotDisplay.transform.GetChild(3).GetComponent<Button>();
+                    button.onClick.RemoveAllListeners();
+                    TextMeshProUGUI cost = slot.slotDisplay.transform.GetChild(2).GetComponent<TextMeshProUGUI>();
+                    cost.text = "";
+                }
             }
         }
 
-        // private void Update()
-        // {
-        //     UpdateSlots();
-        //     OpenInterface();
-        // }
+        public void BuyItem(int id)
+        {
+            if (Player.instance.currentMoney >= inventory.database.ItemObjects[id].cost)
+            {
+                Player.instance.currentMoney -= inventory.database.ItemObjects[id].cost;
+                RemoveItem(id, -1);
+                Player.instance.inventory.AddItem(inventory.database.ItemObjects[id].data, 1);
+            }
+        }
+
+        private void Update()
+        {
+            OpenInterface();
+        }
 
         public abstract void OpenInterface();
         
-        public void UpdateSlots()
+        public void RemoveItem(int id, int count)
         {
-            foreach (KeyValuePair<GameObject, InventorySlot> _slot in slotsOnInterface)
+            for (int i = inventory.GetSlots.Length - 1; i >= 0; i--)
             {
-                if (_slot.Value.item.Id >= 0)
+                if (inventory.GetSlots[i].item.Id == id)
                 {
-                    Transform child = _slot.Key.transform.GetChild(0);
-                    Image image = child.GetComponentInChildren<Image>();
-                    image.sprite = _slot.Value.ItemObject.icon;
-
-                    DisplayItem(image, child.GetComponent<RectTransform>(), _slot.Value.amount);
-                    image.color = new Color(1, 1, 1, 1);
-
-                    _slot.Key.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text =
-                        _slot.Value.amount == 1 ? "" : _slot.Value.amount.ToString();
-                }
-                else
-                {
-                    Transform child = _slot.Key.transform.GetChild(0);
-                    Image image = child.GetComponentInChildren<Image>();
-                    image.sprite = null;
-                    image.color = new Color(1, 1, 1, 0);
-                    _slot.Key.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "";
+                    if (inventory.GetSlots[i].amount == count * -1)
+                        inventory.GetSlots[i].RemoveItem();
+                    else if (inventory.GetSlots[i].amount > count * -1)
+                    {
+                        inventory.GetSlots[i].ChangeAmount(count);
+                    }
+                    else
+                    {
+                        Debug.Log("Недостаточное количество");
+                    }
+                    return;
                 }
             }
         }
 
         public abstract void CreateSlots();
 
-        public void DisplayItem(Image _image, RectTransform _rectTransform, int _amount)
+        public void DisplayItem(Image image, RectTransform rectTransform, int amount)
         {
-            SetNormalSize(_image, _rectTransform);
+            SetNormalSize(image, rectTransform);
 
-            if (_amount >= 2)
-                _rectTransform.anchoredPosition = new Vector2(-6f, 6f);
+            if (amount >= 2)
+                rectTransform.anchoredPosition = new Vector2(-6f, 6f);
             else
-                _rectTransform.anchoredPosition = new Vector2(0, 0);
+                rectTransform.anchoredPosition = new Vector2(0, 0);
             
-            _rectTransform.anchorMax = new Vector2(0.5f, 0.5f);
-            _rectTransform.anchorMin = new Vector2(0.5f, 0.5f);
+            rectTransform.anchorMax = new Vector2(0.5f, 0.5f);
+            rectTransform.anchorMin = new Vector2(0.5f, 0.5f);
         }
 
-        public void SetNormalSize(Image _image, RectTransform _rectTransform)
+        public void SetNormalSize(Image image, RectTransform rectTransform)
         {
-            _image.SetNativeSize();
+            image.SetNativeSize();
 
             float difference;
-            if (_rectTransform.sizeDelta.x > _rectTransform.sizeDelta.y)
+            if (rectTransform.sizeDelta.x > rectTransform.sizeDelta.y)
             {
-                difference = _rectTransform.sizeDelta.x / 80;
+                difference = rectTransform.sizeDelta.x / 80;
             }
             else
             {
-                difference = _rectTransform.sizeDelta.y / 80;
+                difference = rectTransform.sizeDelta.y / 80;
             }
             
-            var sizeDelta = _rectTransform.sizeDelta;
+            var sizeDelta = rectTransform.sizeDelta;
             float x = sizeDelta.x / difference;
             float y = sizeDelta.y / difference;
             sizeDelta = new Vector2(x, y);
-            _rectTransform.localScale  = new Vector2(1, 1);
-            _rectTransform.sizeDelta = sizeDelta;
+            rectTransform.localScale  = new Vector2(1, 1);
+            rectTransform.sizeDelta = sizeDelta;
         }
         
             
@@ -179,7 +213,8 @@ namespace UI
             
             if (MouseData.slotHoverOver)
             {
-                InventorySlot mouseHoverSlotData = MouseData.interfaceMouseIsOver.slotsOnInterface[MouseData.slotHoverOver];
+                InventorySlot mouseHoverSlotData =
+                    MouseData.interfaceMouseIsOver.slotsOnInterface[MouseData.slotHoverOver];
                 inventory.SwapItems(slotsOnInterface[obj], mouseHoverSlotData);
             }
         }

@@ -11,10 +11,11 @@ public class Player : MonoBehaviour
     public static Player instance;
     public InventoryObject inventory;
     public InventoryObject equipment;
+    public InventoryObject shop;
     
     public int maxHealth = 100;
     public static bool wasInShop = false;
-    public static int currentMoney;
+    public int currentMoney = 100;
     public GameObject god;
     public static bool wasInLords = false;
     public static int currentHealth = 100;
@@ -25,6 +26,8 @@ public class Player : MonoBehaviour
     public HealthBar healthBar;
     
     public Attribute[] attributes;
+
+    
     private void Start()
     {
         healthBar.SetHealth(maxHealth);
@@ -37,6 +40,12 @@ public class Player : MonoBehaviour
         {
             equipment.GetSlots[i].OnBeforUpdate += OnBeforeSlotsUpdate;
             equipment.GetSlots[i].OnAfterUpdate += OnAfterSlotsUpdate;
+        }
+        
+        for (int i = shop.GetSlots.Length - 1; i >= 0; i--)
+        {
+            shop.GetSlots[i].OnBeforUpdate += OnBeforeSlotsUpdate;
+            shop.GetSlots[i].OnAfterUpdate += OnAfterSlotsUpdate;
         }
         
     }
@@ -117,12 +126,14 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             inventory.Save();
+            shop.Save();
             equipment.Save();
         }
         
         if (Input.GetKeyDown(KeyCode.L))
         {
             inventory.Load();
+            shop.Load();
             equipment.Load();
         }
     }

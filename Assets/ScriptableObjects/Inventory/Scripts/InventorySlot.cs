@@ -26,8 +26,7 @@ namespace ScriptableObjects.Inventory.Scripts
                 if (item.Id >= 0)
                 {
                     return parent.inventory.database.ItemObjects[item.Id];
-                }   
-
+                }
                 return null; 
             }
         }
@@ -37,9 +36,9 @@ namespace ScriptableObjects.Inventory.Scripts
             UpdateSlot(new Item(), 0);
         }
         
-        public InventorySlot(Item _item, int _amount)
+        public InventorySlot(Item item, int amount)
         {
-            UpdateSlot(_item, _amount);
+            UpdateSlot(item, amount);
         }
         
         public void UpdateSlot(Item _item, int _amount)
@@ -57,19 +56,19 @@ namespace ScriptableObjects.Inventory.Scripts
             UpdateSlot(new Item(), 0);
         }
 
-        public void AddAmount(int value)
+        public void ChangeAmount(int value)
         {
             UpdateSlot(item, amount += value);
         }
 
-        public bool CanPlaceinSlot(ItemObject _itemObject)
+        public bool CanPlaceInSlot(ItemObject itemObject)
         {
-            if (AllowedItems.Length <= 0 || _itemObject == null || _itemObject.data.Id < 0)
+            if (AllowedItems.Length <= 0 || itemObject == null || itemObject.data.Id < 0)
                 return true;
             
             for (int i = AllowedItems.Length - 1; i >= 0; i--)
             {
-                if (_itemObject.type == AllowedItems[i])
+                if (itemObject.type == AllowedItems[i])
                 {
                     return true;
                 }

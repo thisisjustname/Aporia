@@ -2390,8 +2390,6 @@ GameObject:
   - component: {fileID: 7566204567271733907}
   - component: {fileID: 3462912704246873137}
   - component: {fileID: 8818350056724904672}
-  - component: {fileID: 1851090635721785546}
-  - component: {fileID: 6860413079744798763}
   - component: {fileID: 5032501287644382447}
   m_Layer: 9
   m_Name: kid_of_leaves
@@ -2585,10 +2583,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09853f9f27b2fba4a81565d23c76a52f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventory: {fileID: 11400000, guid: c77945de7ac3a8242a8d3321a18b71dc, type: 2}
+  equipment: {fileID: 11400000, guid: 9598d8f978388e54bb2699d1bb49647d, type: 2}
+  shop: {fileID: 11400000, guid: 39c596457697ace4bafb727f52fa3da8, type: 2}
   maxHealth: 100
+  currentMoney: 100
   god: {fileID: 0}
-  point: {fileID: 0}
   healthBar: {fileID: 7566204566269575679}
+  attributes: []
 --- !u!95 &7566204567271733905
 Animator:
   serializedVersion: 3
@@ -2736,7 +2738,7 @@ MonoBehaviour:
   - {x: 0.06015387, y: 0.29996368, z: 0}
   m_ShapePathHash: 1587670135
   m_Mesh: {fileID: 0}
-  m_InstanceId: 93312
+  m_InstanceId: 63068
 --- !u!114 &8818350056724904672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2750,37 +2752,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ShadowGroup: 0
---- !u!114 &1851090635721785546
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7566204567271733913}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15508157e28eaac489b1100f00313d42, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inventory: {fileID: 0}
-  target: {fileID: 0}
-  background: {fileID: 0}
-  slotHolder: {fileID: 0}
---- !u!114 &6860413079744798763
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7566204567271733913}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e6812723e7a544ab9b20dde96041da1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shop: {fileID: 0}
-  target: {fileID: 0}
-  ShopHolder: {fileID: 0}
 --- !u!114 &5032501287644382447
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -528,31 +528,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 35
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &98403675 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2282228626589606608, guid: f68336e6ebbf23a46b0f0efb88af28ee, type: 3}
-  m_PrefabInstance: {fileID: 4877996794539507223}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &98403677
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 98403675}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afb6707798aa49d8a717ff37a0c1d2bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  InventoryEnabled: 0
-  target: {fileID: 0}
-  maxSpeed: 0
-  inventory: {fileID: 0}
-  equipment: {fileID: 0}
-  uIPlayerTest: {fileID: 1986817311}
-  uIPlayerTestCanvas: {fileID: 0}
-  airPath: {fileID: 0}
 --- !u!43 &162435511
 Mesh:
   m_ObjectHideFlags: 0
@@ -1598,6 +1573,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1065649656 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4877996794559036005, guid: f68336e6ebbf23a46b0f0efb88af28ee, type: 3}
+  m_PrefabInstance: {fileID: 4877996794539507223}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1071853641
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3124,11 +3104,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1986817311 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4877996794559036005, guid: f68336e6ebbf23a46b0f0efb88af28ee, type: 3}
-  m_PrefabInstance: {fileID: 4877996794539507223}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2080138631
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3517,6 +3492,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4877996793304110370, guid: f68336e6ebbf23a46b0f0efb88af28ee, type: 3}
+      propertyPath: ui
+      value: 
+      objectReference: {fileID: 1065649656}
+    - target: {fileID: 4877996793568577440, guid: f68336e6ebbf23a46b0f0efb88af28ee, type: 3}
+      propertyPath: ui
+      value: 
+      objectReference: {fileID: 1065649656}
     - target: {fileID: 4877996793568577442, guid: f68336e6ebbf23a46b0f0efb88af28ee, type: 3}
       propertyPath: m_IsActive
       value: 1

@@ -12,49 +12,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05ed02c3caef1c943a5ed522c4a9a1a6, type: 3}
   m_Name: Shop Inventory
   m_EditorClassIdentifier: 
-  savePath: 
+  savePath: /shop.Save
   database: {fileID: 11400000, guid: fd00c56923f39ea4b9f03942f322d9d7, type: 2}
+  type: 3
   Container:
-    Items:
+    Slots:
     - AllowedItems: 
-      parent: {fileID: 0}
+      item:
+        Name: Cane
+        buffs: []
+        Id: 2
+      amount: 2
+    - AllowedItems: 
       item:
         Name: Shield
         buffs: []
-        Id: 2
+        Id: 7
+      amount: 2
+    - AllowedItems: 
+      item:
+        Name: 
+        buffs: []
+        Id: -1
+      amount: 0
+    - AllowedItems: 
+      item:
+        Name: 
+        buffs: []
+        Id: -1
       amount: 1
     - AllowedItems: 
-      parent: {fileID: 0}
       item:
-        Name: 
+        Name: Amulet
         buffs: []
-        Id: -1
-      amount: 0
+        Id: 0
+      amount: 1
     - AllowedItems: 
-      parent: {fileID: 0}
       item:
         Name: 
         buffs: []
         Id: -1
-      amount: 0
-    - AllowedItems: 
-      parent: {fileID: 0}
-      item:
-        Name: 
-        buffs: []
-        Id: -1
-      amount: 0
-    - AllowedItems: 
-      parent: {fileID: 0}
-      item:
-        Name: 
-        buffs: []
-        Id: -1
-      amount: 0
-    - AllowedItems: 
-      parent: {fileID: 0}
-      item:
-        Name: 
-        buffs: []
-        Id: -1
-      amount: 0
+      amount: 1

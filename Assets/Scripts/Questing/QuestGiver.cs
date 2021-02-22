@@ -53,8 +53,8 @@ namespace Questing
                 Player.wasInLords = false;
                 done.SetActive(true);
             }
-            counter.SetText(quest.goal.currentAmount.ToString() + " из " + quest.goal.requiredAmount.ToString());
-            if (questIdPicked == true & Input.GetKeyDown(KeyCode.Q))
+            counter.SetText(quest.goal.currentAmount + " из " + quest.goal.requiredAmount);
+            if (questIdPicked & Input.GetKeyDown(KeyCode.Q))
             {
                 windowIsActive = !windowIsActive;
                 if (windowIsActive == false)
@@ -67,6 +67,5 @@ namespace Questing
                 }
             }    
         }
-
     }
 }

@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using ScriptableObjects.Inventory.Scripts;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.PlayerLoop;
 
 namespace UI
 {
