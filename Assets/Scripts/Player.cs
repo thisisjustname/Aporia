@@ -1,15 +1,15 @@
 ﻿using System;
 using Questing;
+using SaveSystem;
 using ScriptableObjects.Inventory.Scripts;
 using ScriptableObjects.Items.Scripts;
-using UI;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-
     public static Player instance;
     public InventoryObject inventory;
+    public CollectibleItemSet collectedItems;
     public InventoryObject equipment;
     public InventoryObject shop;
     
@@ -32,6 +32,7 @@ public class Player : MonoBehaviour
     {
         healthBar.SetHealth(maxHealth);
         god = GameObject.Find("QuestGiverShop");
+        collectedItems = FindObjectOfType<CollectibleItemSet>();
 
         for (int i = attributes.Length - 1; i >= 0; i--)
             attributes[i].SetParent(this);
@@ -47,7 +48,6 @@ public class Player : MonoBehaviour
             shop.GetSlots[i].OnBeforUpdate += OnBeforeSlotsUpdate;
             shop.GetSlots[i].OnAfterUpdate += OnAfterSlotsUpdate;
         }
-        
     }
 
     public void OnBeforeSlotsUpdate(InventorySlot _slot)
@@ -115,9 +115,10 @@ public class Player : MonoBehaviour
         if (appearInPoint)
         {
             PositionSaveLoadManager.Instance.LoadGame();
-            Player.instance.transform.position = PositionSaveLoadManager.Instance.savePositionData.spawnPosition;
+            instance.transform.position = PositionSaveLoadManager.Instance.savePositionData.spawnPosition;
         }
         Debug.Log(SceneSwitchManager.Instance.name);
+        Debug.Log(CollectibleItemSet.Instance.name);
         Debug.Log(PositionSaveLoadManager.Instance.name);
     }
 
@@ -146,17 +147,17 @@ public class Player : MonoBehaviour
 
     public void StartQuest()
     {
-        Player.wasInLords = true;
+        wasInLords = true;
     }
 
     public void WasInLorrrddss()
     {
-        Player.wasInLords = false;
+        wasInLords = false;
     }
 
     public void IncreaseValue(int value)
     {
-        god.GetComponent<QuestGiver>().quest.goal.currentAmount += value;
+        // god.GetComponent<QuestGiver>().quest.goal.currentAmount += value;
     }
 
     public void OnTriggerEnter2D(Collider2D other)
@@ -167,6 +168,7 @@ public class Player : MonoBehaviour
             if (inventory.AddItem(new Item(item.item), 1))
             {
                 Destroy(other.gameObject);
+                collectedItems.CollectedItems.Add(item.ID);
             }
         }
     }
@@ -183,10 +185,10 @@ public class Player : MonoBehaviour
     }
 }
 
-[System.Serializable]
+[Serializable]
 public class Attribute
 {
-    [System.NonSerialized] public Player parent;
+    [NonSerialized] public Player parent;
     public Attributes type;
     public ModifiableInt value;
 

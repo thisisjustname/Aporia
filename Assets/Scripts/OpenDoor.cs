@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using SaveSystem;
+using UnityEngine;
+
 
 public class OpenDoor : MonoBehaviour
 {
@@ -13,7 +15,7 @@ public class OpenDoor : MonoBehaviour
 
     [SerializeField]
     private string sceneName;
-
+    
     SceneSwitchManager sceneSwitch;
     private void Start()
     {
@@ -36,23 +38,20 @@ public class OpenDoor : MonoBehaviour
     {
         playerDetected = Physics2D.OverlapBox(gameObject.transform.position, new Vector2(width, height), 0, whatIsPlayer);
         // Debug.Log(playerDetected);
-        if (playerDetected == true)
+        if (playerDetected)
         {
             pressE.SetActive(true);
             if (Input.GetKeyDown(KeyCode.E))
             {
                 if (saveData)
                 {
-                    Debug.Log(PositionSaveLoadManager.Instance.savePositionData.spawnPosition.x);   
-                    PositionSaveLoadManager.Instance.savePositionData.spawnPosition = Player.instance.transform.position;
-                    PositionSaveLoadManager.Instance.SaveGame();
+                    GameEvents.savePlayersPositionAndPickedUpItems?.Invoke();
                     Player.appearInPoint = false;
                 }
                 else
-                {
+                {   
                     Player.appearInPoint = true;
                 }
-                
                 Debug.Log("Saved");
                 sceneSwitch.SwitchScene(sceneName);
             }

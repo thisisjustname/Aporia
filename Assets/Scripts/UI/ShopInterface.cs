@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using Pathfinding;
 using ScriptableObjects.Inventory.Scripts;
 using ScriptableObjects.Items.Scripts;
 using UnityEngine;

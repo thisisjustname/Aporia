@@ -756,6 +756,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 11400000, guid: 9598d8f978388e54bb2699d1bb49647d, type: 2}
+  InventoryEnabled: 0
+  target: {fileID: 0}
+  maxSpeed: 0
+  ui: {fileID: 4877996794559036005}
+  uiCanvas: {fileID: 4877996794559036002}
+  airPath: {fileID: 0}
   slots:
   - {fileID: 7945204974541820487}
   - {fileID: 7945204974974911998}
@@ -904,6 +910,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 11400000, guid: c77945de7ac3a8242a8d3321a18b71dc, type: 2}
+  InventoryEnabled: 0
+  target: {fileID: 0}
+  maxSpeed: 0
+  ui: {fileID: 4877996794559036005}
+  uiCanvas: {fileID: 4877996794559036002}
+  airPath: {fileID: 0}
 --- !u!114 &4877996793568577451
 MonoBehaviour:
   m_ObjectHideFlags: 0

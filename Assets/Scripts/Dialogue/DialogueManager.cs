@@ -17,29 +17,26 @@ namespace Dialogue
         public GameObject questButtonShop;
         private int isChoise;
         public  GameObject target;
-        public GameObject player;
-    
+
         public  GameObject agree;
         public  GameObject notArgree;
-
-        public GameObject amulet;
-        public GameObject korni;
 
         private float maxSpeed;
 
         void Start()
         {
-            maxSpeed = player.GetComponent<AIPath>().maxSpeed;
+            maxSpeed = Player.instance.GetComponent<AIPath>().maxSpeed;
             dialogueBox.SetActive(false);
             sentences = new Queue<string>();
         }
 
         public void StartDialogue(Dialogue dialogue)
         {
-            player.GetComponent<AIPath>().maxSpeed = 0;
-            target.transform.position = player.transform.position;
+            Player.instance.GetComponent<AIPath>().maxSpeed = 0;
+            target.transform.position = Player.instance.transform.position;
             dialogueBox.SetActive(true);
             target.SetActive(false);
+            
             nameText.text = dialogue.name;
             isChoise = dialogue.isChoise;
         
@@ -83,7 +80,7 @@ namespace Dialogue
 
         public void EndDialogue()
         {
-            player.GetComponent<AIPath>().maxSpeed = maxSpeed;
+            Player.instance.GetComponent<AIPath>().maxSpeed = maxSpeed;
             questButton.SetActive(false);
             target.SetActive(true);
             dialogueBox.SetActive(false);
@@ -93,16 +90,6 @@ namespace Dialogue
         {
             agree.SetActive(false);
             notArgree.SetActive(false);
-        }
-
-        public void Amulet()
-        {
-            amulet.SetActive(true);
-        }
-     
-        public void Korni()
-        {
-            korni.SetActive(true);
         }
     }
 }
